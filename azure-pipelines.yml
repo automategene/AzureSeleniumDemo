@@ -2,7 +2,7 @@ trigger:
   - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'macos-latest'  # Use macos-latest to specify the macOS agent
 
 steps:
   # Task 1: Maven Build and Test
@@ -13,7 +13,7 @@ steps:
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       javaHomeOption: 'JDKVersion'
-      jdkVersionOption: '1.8'  # Specify JDK version
+      jdkVersionOption: '1.8'  # Specify the Java version
       jdkArchitectureOption: 'x64'
       mavenVersionOption: 'Default'
       mavenAuthenticateFeed: false
@@ -31,4 +31,3 @@ steps:
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
-
